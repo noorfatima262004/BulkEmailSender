@@ -1,0 +1,19 @@
+body {
+  background: linear-gradient(to right, #e3f2fd, #bbdefb);
+  font-family: 'Poppins', sans-serif;
+}
+
+.card {
+  background-color: #ffffff;
+}
+
+.btn-primary {
+  background: linear-gradient(90deg, #1976d2, #42a5f5);
+  border: none;
+  transition: all 0.3s ease;
+}
+
+.btn-primary:hover {
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(25, 118, 210, 0.3);
+}
