@@ -84,4 +84,5 @@ def send_emails():
         return jsonify({"status": "error", "message": str(e)})
 
 if __name__ == "__main__":
-    app.run(debug=True)
+    port = int(os.environ.get("PORT", 5000))  # Render provides PORT automatically
+    app.run(host="0.0.0.0", port=port, debug=False)
