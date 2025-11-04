@@ -61,13 +61,21 @@
       spinner.classList.add("d-none");
       sendBtn.disabled = false;
       btnText.textContent = "Send Emails";
+      console.log(data);
+     if (data.status === "success") {
+  responseMessage.innerHTML = `<div class="alert alert-success rounded-3 mt-3">✅ Emails sent successfully!</div>`;
+  form.reset();
 
-      if (data.status === "success") {
-        responseMessage.innerHTML = `<div class="alert alert-success rounded-3 mt-3">✅ Emails sent successfully!</div>`;
-        form.reset();
-      } else {
-        responseMessage.innerHTML = `<div class="alert alert-danger rounded-3 mt-3">❌ Error: ${data.message}</div>`;
-      }
+  // Hide message after 5 seconds
+  setTimeout(() => {
+    responseMessage.innerHTML = "";
+  }, 5000); // 5000ms = 5 seconds
+} else {
+  responseMessage.innerHTML = `<div class="alert alert-danger rounded-3 mt-3">❌ Error: ${data.message}</div>`;
+  setTimeout(() => {
+    responseMessage.innerHTML = "";
+  }, 5000);
+}
     });
   </script>
 
